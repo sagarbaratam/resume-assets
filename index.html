@@ -1,27 +1,81 @@
-<style>
-    .layout { display: grid; grid-template-columns: 1fr 300px; gap: 20px; max-width: 1200px; margin: auto; }
-    .metrics { background: #161b22; border: 1px solid #30363d; padding: 15px; border-radius: 8px; text-align: left; font-size: 12px; }
-    .metric-item { margin-bottom: 10px; border-bottom: 1px solid #21262d; padding-bottom: 5px; }
-    .status-green { color: #3fb950; font-weight: bold; }
-</style>
+<body>
+    <div class="tech-bg">vLLM SLURM KUBERNETES PROMETHEUS OPENTELEMETRY GKE TERRAFORM DOCKER NVIDIA-TRITON BASH PYTHON...</div>
 
-<div class="layout">
-    <div class="container">
-        <video controls autoplay muted playsinline>
-            <source src="showreel.mp4" type="video/mp4">
-        </video>
-        <div class="caption">Executing: <b>Sagar_Baratam_Career_Trace.exe</b></div>
-    </div>
+    <div class="layout">
+        <div class="container">
+            <video controls autoplay muted playsinline>
+                <source src="showreel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="caption">
+                <span class="status-green">●</span> Executing: <b>Sagar_Baratam_Career_Trace.exe</b>
+            </div>
+        </div>
 
-    <div class="metrics">
-        <h3>SYSTEM_STATUS</h3>
-        <div class="metric-item">ROLE: <span class="status-green">AI_INFRA_ARCHITECT</span></div>
-        <div class="metric-item">K8S_CLUSTERS: <span class="status-green">HEALTHY</span></div>
-        <div class="metric-item">VISION: <i>"Scalable, Self-Healing AI Infrastructure for 2026"</i></div>
-        <div class="metric-item">CORE_TALENTS:
-            <br>• Distributed Tracing
-            <br>• GPU Orchestration
-            <br>• Model Context Protocol (MCP)
+        <div class="metrics">
+            <h3 style="margin-top:0; border-bottom: 1px solid #30363d; padding-bottom:10px;">SYSTEM_STATUS</h3>
+            
+            <div class="metric-item">
+                <span class="label">Uptime:</span> 
+                <span class="status-green" id="heartbeat">99.99% (Live)</span>
+            </div>
+            
+            <div class="metric-item">
+                <span class="label">Current_Role:</span> 
+                <br><span style="color:#e6edf3">AI Infra Architect</span>
+            </div>
+
+            <div class="metric-item">
+                <span class="label">Vision_2026:</span>
+                <br><i style="font-size: 11px;">"Democratizing AI via Scalable GPU Orchestration"</i>
+            </div>
+
+            <div class="metric-item" style="border-bottom:none;">
+                <span class="label">Observability_Stack:</span>
+                <div style="margin-top:5px; color:#d2a8ff;">
+                    > Grafana / Prometheus<br>
+                    > OpenTelemetry (OTel)<br>
+                    > Jaeger / Tempo
+                </div>
+            </div>
+
+            <div style="margin-top: 20px; font-size: 10px; color: #8b949e;">
+                LOC: VISAKHAPATNAM (VIZAG)
+            </div>
         </div>
     </div>
-</div>
+
+    <style>
+        .layout { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            align-items: flex-start; 
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: 50px auto; 
+            padding: 20px;
+        }
+        .container { flex: 1; min-width: 320px; max-width: 700px; }
+        .metrics { 
+            width: 260px; 
+            background: #161b22; 
+            border: 1px solid #30363d; 
+            padding: 20px; 
+            border-radius: 12px; 
+            text-align: left; 
+            font-size: 13px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .metric-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #21262d; }
+        .label { color: #8b949e; font-weight: bold; text-transform: uppercase; font-size: 10px; }
+        .status-green { color: #3fb950; text-shadow: 0 0 5px #3fb950; }
+        
+        /* Heartbeat Animation */
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        #heartbeat { animation: blink 1.5s infinite; }
+        
+        /* Ensure video looks like a monitor */
+        video { width: 100%; border: 4px solid #30363d; }
+    </style>
+</body>
