@@ -1,25 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagar Baratam | AI Infrastructure Journey</title>
-    <style>
-        body { margin: 0; background: #0b0e14; color: #58a6ff; font-family: 'Courier New', monospace; overflow: hidden; }
-        .tech-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; font-size: 10px; z-index: -1; }
-        .container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; padding: 20px; text-align: center;}
-        video, img { max-width: 100%; border-radius: 8px; border: 1px solid #30363d; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-        .caption { margin-top: 15px; color: #8b949e; font-size: 14px; }
-    </style>
-</head>
-<body>
-    <div class="tech-bg">vLLM SLURM KUBERNETES PROMETHEUS OPENTELEMETRY GKE TERRAFORM DOCKER NVIDIA-TRITON BASH PYTHON...</div>
+<style>
+    .layout { display: grid; grid-template-columns: 1fr 300px; gap: 20px; max-width: 1200px; margin: auto; }
+    .metrics { background: #161b22; border: 1px solid #30363d; padding: 15px; border-radius: 8px; text-align: left; font-size: 12px; }
+    .metric-item { margin-bottom: 10px; border-bottom: 1px solid #21262d; padding-bottom: 5px; }
+    .status-green { color: #3fb950; font-weight: bold; }
+</style>
+
+<div class="layout">
     <div class="container">
         <video controls autoplay muted playsinline>
             <source src="showreel.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
         <div class="caption">Executing: <b>Sagar_Baratam_Career_Trace.exe</b></div>
     </div>
-</body>
-</html>
+
+    <div class="metrics">
+        <h3>SYSTEM_STATUS</h3>
+        <div class="metric-item">ROLE: <span class="status-green">AI_INFRA_ARCHITECT</span></div>
+        <div class="metric-item">K8S_CLUSTERS: <span class="status-green">HEALTHY</span></div>
+        <div class="metric-item">VISION: <i>"Scalable, Self-Healing AI Infrastructure for 2026"</i></div>
+        <div class="metric-item">CORE_TALENTS:
+            <br>• Distributed Tracing
+            <br>• GPU Orchestration
+            <br>• Model Context Protocol (MCP)
+        </div>
+    </div>
+</div>
