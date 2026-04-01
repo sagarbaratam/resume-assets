@@ -1,81 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Baratam | AI Infrastructure Architect</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --border-color: #30363d;
+            --text-main: #58a6ff;
+            --text-dim: #8b949e;
+            --accent-green: #3fb950;
+        }
+
+        body { 
+            margin: 0; 
+            background: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: 'Courier New', monospace; 
+            overflow-x: hidden; 
+        }
+
+        /* Tech Background Layer */
+        .tech-bg { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            opacity: 0.05; font-size: 10px; z-index: -1; pointer-events: none;
+            word-wrap: break-word; line-height: 1.5;
+        }
+
+        .layout { 
+            display: flex; flex-wrap: wrap; justify-content: center; 
+            align-items: flex-start; gap: 25px; max-width: 1200px; 
+            margin: 40px auto; padding: 20px;
+        }
+
+        /* Video / Main Content */
+        .main-content { flex: 2; min-width: 320px; max-width: 800px; }
+        
+        video { 
+            width: 100%; border: 3px solid var(--border-color); 
+            border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .caption { margin-top: 15px; font-size: 14px; color: var(--text-dim); }
+
+        /* Dashboard Sidebar */
+        .metrics-sidebar { 
+            flex: 1; min-width: 280px; background: #161b22; 
+            border: 1px solid var(--border-color); padding: 20px; 
+            border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+
+        .metric-item { margin-bottom: 20px; border-bottom: 1px solid #21262d; padding-bottom: 10px; }
+        .label { color: var(--text-dim); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .value { display: block; margin-top: 5px; color: #e6edf3; font-weight: bold; }
+        
+        .status-green { color: var(--accent-green); text-shadow: 0 0 5px var(--accent-green); }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        .heartbeat { animation: blink 1.5s infinite; }
+
+        /* Terminal Window */
+        #terminal-container { 
+            width: 100%; height: 250px; margin-top: 30px; 
+            border: 1px solid var(--border-color); border-radius: 8px; 
+            overflow: hidden; background: #000;
+        }
+
+        @media (max-width: 768px) {
+            .layout { margin: 10px auto; }
+            .metrics-sidebar { width: 100%; }
+        }
+    </style>
+</head>
 <body>
-    <div class="tech-bg">vLLM SLURM KUBERNETES PROMETHEUS OPENTELEMETRY GKE TERRAFORM DOCKER NVIDIA-TRITON BASH PYTHON...</div>
+
+    <div class="tech-bg">
+        vLLM SLURM KUBERNETES PROMETHEUS OPENTELEMETRY GKE TERRAFORM DOCKER NVIDIA-TRITON BASH PYTHON ANSIBLE HELM ARGO-CD JAEGER GRAFANA... (REPEATING_INFRA_STACK)
+    </div>
 
     <div class="layout">
-        <div class="container">
-            <video controls autoplay muted playsinline>
+        <div class="main-content">
+            <video controls autoplay muted playsinline poster="preview.png">
                 <source src="showreel.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="caption">
-                <span class="status-green">●</span> Executing: <b>Sagar_Baratam_Career_Trace.exe</b>
+                <span class="status-green heartbeat">●</span> [NODE_STABLE]: <b>Sagar_Baratam_Career_Trace.exe</b>
             </div>
+
+            <div id="terminal-container"></div>
         </div>
 
-        <div class="metrics">
-            <h3 style="margin-top:0; border-bottom: 1px solid #30363d; padding-bottom:10px;">SYSTEM_STATUS</h3>
+        <div class="metrics-sidebar">
+            <h3 style="margin: 0 0 20px 0; font-size: 16px; border-bottom: 2px solid var(--accent-green); padding-bottom: 5px;">SYSTEM_STATUS</h3>
             
             <div class="metric-item">
-                <span class="label">Uptime:</span> 
-                <span class="status-green" id="heartbeat">99.99% (Live)</span>
-            </div>
-            
-            <div class="metric-item">
-                <span class="label">Current_Role:</span> 
-                <br><span style="color:#e6edf3">AI Infra Architect</span>
+                <span class="label">System Uptime</span>
+                <span class="value status-green">99.999% (Live)</span>
             </div>
 
             <div class="metric-item">
-                <span class="label">Vision_2026:</span>
-                <br><i style="font-size: 11px;">"Democratizing AI via Scalable GPU Orchestration"</i>
+                <span class="label">Current Capability</span>
+                <span class="value">AI Infrastructure Architect</span>
             </div>
 
-            <div class="metric-item" style="border-bottom:none;">
-                <span class="label">Observability_Stack:</span>
-                <div style="margin-top:5px; color:#d2a8ff;">
-                    > Grafana / Prometheus<br>
-                    > OpenTelemetry (OTel)<br>
-                    > Jaeger / Tempo
-                </div>
+            <div class="metric-item">
+                <span class="label">Primary Stack</span>
+                <span class="value" style="color: #d2a8ff; font-size: 11px;">
+                    > GPU Orchestration<br>
+                    > Observability (OTel)<br>
+                    > GitOps / CasC
+                </span>
             </div>
 
-            <div style="margin-top: 20px; font-size: 10px; color: #8b949e;">
-                LOC: VISAKHAPATNAM (VIZAG)
+            <div class="metric-item">
+                <span class="label">Vision 2026</span>
+                <span class="value" style="font-style: italic; font-weight: normal; font-size: 12px;">
+                    "Scaling intelligent, self-healing clusters for the Vizag tech ecosystem."
+                </span>
+            </div>
+
+            <div style="font-size: 10px; color: var(--text-dim); text-align: center; margin-top: 30px;">
+                LOCATION: VISAKHAPATNAM [IN]
             </div>
         </div>
     </div>
 
-    <style>
-        .layout { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            align-items: flex-start; 
-            gap: 30px; 
-            max-width: 1200px; 
-            margin: 50px auto; 
-            padding: 20px;
+    <script>
+        // Terminal Initialization
+        const term = new Terminal({
+            cursorBlink: true,
+            theme: { background: '#0b0e14', foreground: '#58a6ff' },
+            fontSize: 13,
+            fontFamily: 'Courier New'
+        });
+
+        term.open(document.getElementById('terminal-container'));
+        term.writeln('\x1b[1;32m[OK] SAGAR_OS KERNEL LOADED\x1b[0m');
+        term.writeln('Welcome, Guest. Type \x1b[1;33mhelp\x1b[0m to explore the architecture.');
+        term.write('\r\nsagar@vizag-node:~$ ');
+
+        let curr_line = '';
+
+        term.onData(e => {
+            if (e === '\r') {
+                term.write('\r\n');
+                handleCommand(curr_line);
+                curr_line = '';
+                term.write('sagar@vizag-node:~$ ');
+            } else if (e === '\u007F') { // Backspace
+                if (curr_line.length > 0) {
+                    curr_line = curr_line.slice(0, -1);
+                    term.write('\b \b');
+                }
+            } else {
+                curr_line += e;
+                term.write(e);
+            }
+        });
+
+        function handleCommand(command) {
+            const cmd = command.trim().toLowerCase();
+            switch(cmd) {
+                case 'help':
+                    term.writeln('Commands: \x1b[1;36mls, whoami, skills, vision, clear\x1b[0m');
+                    break;
+                case 'ls':
+                    term.writeln('projects/  infrastructure-as-code/  vllm-configs/  career-trace.json');
+                    break;
+                case 'whoami':
+                    term.writeln('Sagar Baratam: AI Infra Architect. Ex-TCS. SRE Expert.');
+                    break;
+                case 'skills':
+                    term.writeln('- vLLM / Slurm Optimization\r\n- K8s / GPU Scheduling\r\n- Prometheus / OpenTelemetry');
+                    break;
+                case 'vision':
+                    term.writeln('Vision: Transforming Vizag into a high-scale AI compute hub.');
+                    break;
+                case 'clear':
+                    term.clear();
+                    break;
+                case '':
+                    break;
+                default:
+                    term.writeln(`-bash: ${cmd}: command not found`);
+            }
         }
-        .container { flex: 1; min-width: 320px; max-width: 700px; }
-        .metrics { 
-            width: 260px; 
-            background: #161b22; 
-            border: 1px solid #30363d; 
-            padding: 20px; 
-            border-radius: 12px; 
-            text-align: left; 
-            font-size: 13px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .metric-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #21262d; }
-        .label { color: #8b949e; font-weight: bold; text-transform: uppercase; font-size: 10px; }
-        .status-green { color: #3fb950; text-shadow: 0 0 5px #3fb950; }
-        
-        /* Heartbeat Animation */
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-        #heartbeat { animation: blink 1.5s infinite; }
-        
-        /* Ensure video looks like a monitor */
-        video { width: 100%; border: 4px solid #30363d; }
-    </style>
+    </script>
 </body>
+</html>
